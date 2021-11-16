@@ -20,13 +20,10 @@ export class CalculatorService {
       person > 0
     ) {
       result.result = true;
-      if (!isNaN(tipPercent) && tipPercent > 0) {
+      if (!isNaN(tipPercent) && tipPercent >= 0) {
         const totalTip = (bill * tipPercent) / 100;
         result.amount = totalTip / person;
         result.total = (bill + totalTip) / +person;
-      } else {
-        result.amount = 0;
-        result.total = bill / person;
       }
     }
     return result;
