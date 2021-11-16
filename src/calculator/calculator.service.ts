@@ -12,7 +12,13 @@ export class CalculatorService {
 
     // !isNaN(tipPercent): tip is number or tip undefine
     //!tipPercent: none
-    if (bill && person && (!isNaN(tipPercent) || !tipPercent)) {
+    if (
+      bill &&
+      person &&
+      (!isNaN(tipPercent) || !tipPercent) &&
+      bill > 0 &&
+      person > 0
+    ) {
       result.result = true;
       if (!isNaN(tipPercent) && tipPercent > 0) {
         const totalTip = (bill * tipPercent) / 100;
