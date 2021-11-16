@@ -16,6 +16,7 @@ export class CalculatorService {
         result.amount = totalTip / person;
         result.total = (bill + totalTip) / +person;
       } else {
+        result.amount = 0;
         result.total = bill / person;
       }
     }
