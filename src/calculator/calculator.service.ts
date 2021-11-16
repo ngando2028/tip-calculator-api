@@ -24,6 +24,9 @@ export class CalculatorService {
         const totalTip = (bill * tipPercent) / 100;
         result.amount = totalTip / person;
         result.total = (bill + totalTip) / +person;
+      } else {
+        result.amount = 0;
+        result.total = bill / person;
       }
     }
     return result;
